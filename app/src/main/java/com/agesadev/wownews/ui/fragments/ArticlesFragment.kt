@@ -9,7 +9,6 @@ import com.agesadev.wownews.R
 
 
 class ArticlesFragment : Fragment() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
