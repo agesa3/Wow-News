@@ -15,21 +15,11 @@ import com.agesadev.wownews.ui.viewmodel.NewsViewModel
 import com.agesadev.wownews.utils.Resource
 import kotlinx.android.synthetic.main.fragment_breaking_news.*
 
-class BreakingNewsFragment : Fragment() {
-
+class BreakingNewsFragment : Fragment(R.layout.fragment_breaking_news) {
 
     lateinit var viewModel: NewsViewModel
     lateinit var newsAdapter: NewsAdapter
     val TAG = "Breaking News Fragment"
-
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_breaking_news, container, false)
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -42,7 +32,6 @@ class BreakingNewsFragment : Fragment() {
                     hideProgressBar()
                     response.data?.let { newsResponse ->
                         newsAdapter.differ.submitList(newsResponse.articles)
-
                     }
                 }
                 is Resource.Error -> {
@@ -73,7 +62,6 @@ class BreakingNewsFragment : Fragment() {
         rvBreakingNews.apply {
             adapter = newsAdapter
             layoutManager = LinearLayoutManager(activity)
-
         }
 
     }
