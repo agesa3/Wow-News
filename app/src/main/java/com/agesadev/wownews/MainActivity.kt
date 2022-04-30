@@ -3,6 +3,7 @@ package com.agesadev.wownews
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.agesadev.wownews.db.ArticleDatabase
@@ -23,6 +24,9 @@ class MainActivity : AppCompatActivity() {
         val viewModelProviderFactory = NewsViewModelProviderFactory(newsRepository)
         viewModel = ViewModelProvider(this, viewModelProviderFactory).get(NewsViewModel::class.java)
 
-        bottomNavigationView.setupWithNavController(newsNavHostFragment.findNavController())
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.newsNavHostFrag) as NavHostFragment
+        val navController = navHostFragment.navController
+        bottomNavigationView.setupWithNavController(navController)
     }
 }
