@@ -10,7 +10,6 @@ import com.agesadev.wownews.R
 
 class SearchNewsFragment : Fragment() {
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
