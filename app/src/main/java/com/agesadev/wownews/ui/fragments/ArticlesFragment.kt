@@ -5,22 +5,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.agesadev.wownews.MainActivity
 import com.agesadev.wownews.R
+import com.agesadev.wownews.ui.viewmodel.NewsViewModel
 
 
-class ArticlesFragment : Fragment() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+class ArticlesFragment : Fragment(R.layout.fragment_articles) {
 
+    lateinit var viewModel: NewsViewModel
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        viewModel = (activity as MainActivity).viewModel
     }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_articles, container, false)
-    }
-
 
 }
