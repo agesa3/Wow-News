@@ -26,6 +26,10 @@ class BreakingNewsFragment : Fragment(R.layout.fragment_breaking_news) {
         viewModel = (activity as MainActivity).viewModel
         setUpRecyclerView()
 
+        newsAdapter.setOnItemClickListener {
+
+        }
+
         viewModel.breakingNews.observe(viewLifecycleOwner, Observer { response ->
             when (response) {
                 is Resource.Success -> {

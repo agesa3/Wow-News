@@ -9,7 +9,11 @@
         android:id="@+id/articlesFragment"
         android:name="com.agesadev.wownews.ui.fragments.ArticlesFragment"
         android:label="fragment_articles"
-        tools:layout="@layout/fragment_articles" />
+        tools:layout="@layout/fragment_articles" >
+        <argument
+            android:name="article"
+            app:argType="com.agesadev.wownews.model.Article" />
+    </fragment>
     <fragment
         android:id="@+id/breakingNewsFragment2"
         android:name="com.agesadev.wownews.ui.fragments.BreakingNewsFragment"
