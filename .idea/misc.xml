@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/AGESA/AndroidStudioProjects/WowNews/app/src/main/res/drawable/saved_news.xml" value="0.1" />
+        <entry key="..\:/Users/AGESA/AndroidStudioProjects/WowNews/app/src/main/res/drawable/search_news.xml" value="0.1" />
         <entry key="..\:/Users/AGESA/AndroidStudioProjects/WowNews/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/AGESA/AndroidStudioProjects/WowNews/app/src/main/res/layout/fragment_articles.xml" value="0.2" />
         <entry key="..\:/Users/AGESA/AndroidStudioProjects/WowNews/app/src/main/res/layout/fragment_breaking_news.xml" value="0.2" />
