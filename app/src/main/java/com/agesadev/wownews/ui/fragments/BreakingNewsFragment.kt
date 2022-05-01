@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.agesadev.wownews.MainActivity
 import com.agesadev.wownews.R
@@ -27,6 +28,13 @@ class BreakingNewsFragment : Fragment(R.layout.fragment_breaking_news) {
         setUpRecyclerView()
 
         newsAdapter.setOnItemClickListener {
+            val bundle= Bundle().apply{
+               putSerializable("art",it)
+            }
+            findNavController().navigate(
+                R.id.action_breakingNewsFragment2_to_articlesFragment,
+                bundle
+            )
 
         }
 

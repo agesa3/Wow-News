@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.agesadev.wownews.MainActivity
 import com.agesadev.wownews.R
@@ -40,6 +41,17 @@ class SearchNewsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewModel = (activity as MainActivity).viewModel
         setUpRecyclerView()
+
+        newsAdapter.setOnItemClickListener {
+            val bundle = Bundle().apply {
+                putSerializable("art", it)
+            }
+            findNavController().navigate(
+                R.id.action_searchNewsFragment2_to_articlesFragment,
+                bundle
+            )
+
+        }
 
         var job: Job? = null
         etSearch.addTextChangedListener { editable ->

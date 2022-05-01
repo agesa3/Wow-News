@@ -10,9 +10,13 @@
         android:name="com.agesadev.wownews.ui.fragments.ArticlesFragment"
         android:label="fragment_articles"
         tools:layout="@layout/fragment_articles" >
+
         <argument
-            android:name="article"
-            app:argType="com.agesadev.wownews.model.Article" />
+            android:name="art"
+            app:argType="com.agesadev.wownews.model.Article"
+            android:defaultValue="@null"
+            app:nullable="true"
+            />
     </fragment>
     <fragment
         android:id="@+id/breakingNewsFragment2"
