@@ -11,13 +11,15 @@ import androidx.navigation.fragment.navArgs
 import com.agesadev.wownews.MainActivity
 import com.agesadev.wownews.R
 import com.agesadev.wownews.ui.viewmodel.NewsViewModel
+import com.google.android.material.snackbar.BaseTransientBottomBar.LENGTH_SHORT
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_articles.*
 
 
 class ArticlesFragment : Fragment(R.layout.fragment_articles) {
 
     lateinit var viewModel: NewsViewModel
-   private val args:ArticlesFragmentArgs by navArgs()
+    private val args: ArticlesFragmentArgs by navArgs()
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -28,7 +30,14 @@ class ArticlesFragment : Fragment(R.layout.fragment_articles) {
         webView.apply {
             webViewClient = WebViewClient()
             if (article != null) {
-                loadUrl(article.url)
+                article.url?.let { loadUrl(it) }
+            }
+        }
+
+        fab.setOnClickListener {
+            if (article != null) {
+                viewModel.saveArticle(article)
+                Snackbar.make(view, "Article Saved Successfully", LENGTH_SHORT).show()
             }
         }
 
