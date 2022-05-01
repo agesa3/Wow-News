@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AbsListView
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -18,6 +19,8 @@ import com.agesadev.wownews.ui.viewmodel.NewsViewModel
 import com.agesadev.wownews.utils.Constants.Companion.QUERY_PAGE_SIZE
 import com.agesadev.wownews.utils.Resource
 import kotlinx.android.synthetic.main.fragment_breaking_news.*
+import kotlinx.android.synthetic.main.fragment_breaking_news.paginationProgressBar
+import kotlinx.android.synthetic.main.fragment_search_news.*
 
 class BreakingNewsFragment : Fragment(R.layout.fragment_breaking_news) {
 
@@ -49,6 +52,9 @@ class BreakingNewsFragment : Fragment(R.layout.fragment_breaking_news) {
                         newsAdapter.differ.submitList(newsResponse.articles.toList())
                         val totalPages = newsResponse.totalResults / QUERY_PAGE_SIZE + 2
                         isLastPage = viewModel.breakingNewsPage == totalPages
+                        if (isLastPage) {
+                            rvBreakingNews.setPadding(0, 0, 0, 0)
+                        }
 
                     }
                 }
@@ -56,6 +62,7 @@ class BreakingNewsFragment : Fragment(R.layout.fragment_breaking_news) {
                     hideProgressBar()
                     response.message?.let { message ->
                         Log.e(TAG, "onViewCreated:An error Occurred : $message ")
+                        Toast.makeText(activity, "An Error Occurred", Toast.LENGTH_SHORT).show()
                     }
 
                 }
@@ -106,8 +113,6 @@ class BreakingNewsFragment : Fragment(R.layout.fragment_breaking_news) {
             if (shouldPaginate) {
                 viewModel.getBreakingNews("us")
                 isScrolling = false
-            } else {
-                rvBreakingNews.setPadding(0, 0, 0, 0)
             }
 
         }
