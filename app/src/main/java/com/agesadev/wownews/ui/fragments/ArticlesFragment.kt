@@ -32,6 +32,7 @@ class ArticlesFragment : Fragment(R.layout.fragment_articles) {
             if (article != null) {
                 article.url?.let { loadUrl(it) }
             }
+            settings.javaScriptEnabled=true
         }
 
         fab.setOnClickListener {
@@ -42,6 +43,8 @@ class ArticlesFragment : Fragment(R.layout.fragment_articles) {
         }
 
     }
+
+
 
 
 }

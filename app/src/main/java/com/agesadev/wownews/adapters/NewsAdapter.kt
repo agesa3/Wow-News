@@ -48,11 +48,9 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ArticleViewHolder>() {
         return differ.currentList.size
     }
 
-
     inner class ArticleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     }
-
     private val differCallback = object : DiffUtil.ItemCallback<Article>() {
         override fun areItemsTheSame(oldItem: Article, newItem: Article): Boolean {
             return oldItem.url == newItem.url
@@ -63,6 +61,5 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ArticleViewHolder>() {
         }
 
     }
-
     val differ = AsyncListDiffer(this, differCallback)
 }

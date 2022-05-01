@@ -1,10 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_200">#005689</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="bg_color">#E5E5E5</color>
+    <color name="accent_color">#616161</color>
+
+
+    <color name="colorPrimary">#005689</color>
+    <color name="colorPrimaryDark">#005689</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="swipe_color_1">#4CAF50</color>
+    <color name="swipe_color_2">#03A9F4</color>
+    <color name="swipe_color_3">#FFC107</color>
+    <color name="swipe_color_4">#FF5722</color>
+
+    <color name="color_section">#4CAF50</color>
+    <color name="color_author">#8E24AA</color>
+
+    <!-- Colors for settings of color theme-->
+    <color name="violet">#9c27b0</color>
+    <color name="light_green">#8bc34a</color>
+
+    <!-- Colors for gradient.xml file -->
+    <color name="gradient_center_color">#880d0d0f</color>
+    <color name="gradient_end_color">#885d5d5e</color>
+    <color name="gradient_start_color">#880f0f10</color>
+
+    <color name="color_trail_text">#102027</color>
+    <color name="color_date_text">#a4a4a4</color>
+
+    <color name="color_app_bar_text">#005689</color>
+    <color name="color_tab_text">#a7c0cd</color>
+
+    <color name="nav_bar_start">#7db1ec</color>
+    <color name="nav_bar_end">#002e5b</color>
 </resources>
