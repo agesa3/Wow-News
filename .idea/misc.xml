@@ -3,16 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/AGESA/AndroidStudioProjects/WowNews/app/src/main/res/drawable/author_bg.xml" value="0.1485" />
         <entry key="..\:/Users/AGESA/AndroidStudioProjects/WowNews/app/src/main/res/drawable/breaking_news.xml" value="0.1" />
+        <entry key="..\:/Users/AGESA/AndroidStudioProjects/WowNews/app/src/main/res/drawable/image_bg.xml" value="0.1" />
+        <entry key="..\:/Users/AGESA/AndroidStudioProjects/WowNews/app/src/main/res/drawable/publisher_bg.xml" value="0.2075" />
         <entry key="..\:/Users/AGESA/AndroidStudioProjects/WowNews/app/src/main/res/drawable/saved_news.xml" value="0.1" />
         <entry key="..\:/Users/AGESA/AndroidStudioProjects/WowNews/app/src/main/res/drawable/search_bg.xml" value="0.1" />
         <entry key="..\:/Users/AGESA/AndroidStudioProjects/WowNews/app/src/main/res/drawable/search_news.xml" value="0.1" />
         <entry key="..\:/Users/AGESA/AndroidStudioProjects/WowNews/app/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="..\:/Users/AGESA/AndroidStudioProjects/WowNews/app/src/main/res/layout/article_single.xml" value="0.2" />
+        <entry key="..\:/Users/AGESA/AndroidStudioProjects/WowNews/app/src/main/res/layout/article_single.xml" value="0.22" />
         <entry key="..\:/Users/AGESA/AndroidStudioProjects/WowNews/app/src/main/res/layout/fragment_articles.xml" value="0.2" />
-        <entry key="..\:/Users/AGESA/AndroidStudioProjects/WowNews/app/src/main/res/layout/fragment_breaking_news.xml" value="0.2" />
+        <entry key="..\:/Users/AGESA/AndroidStudioProjects/WowNews/app/src/main/res/layout/fragment_breaking_news.xml" value="0.1" />
         <entry key="..\:/Users/AGESA/AndroidStudioProjects/WowNews/app/src/main/res/layout/fragment_saved_news.xml" value="0.2" />
-        <entry key="..\:/Users/AGESA/AndroidStudioProjects/WowNews/app/src/main/res/layout/fragment_search_news.xml" value="0.5" />
+        <entry key="..\:/Users/AGESA/AndroidStudioProjects/WowNews/app/src/main/res/layout/fragment_search_news.xml" value="0.325626204238921" />
         <entry key="..\:/Users/AGESA/AndroidStudioProjects/WowNews/app/src/main/res/layout/fragment_test.xml" value="0.1" />
         <entry key="..\:/Users/AGESA/AndroidStudioProjects/WowNews/app/src/main/res/menu/bottom_nav_menu.xml" value="0.11388888888888889" />
       </map>
