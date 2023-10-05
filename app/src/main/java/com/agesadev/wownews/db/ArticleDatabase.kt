@@ -17,18 +17,14 @@ abstract class ArticleDatabase : RoomDatabase() {
     abstract fun getArticleDao(): ArticleDao
 
     companion object {
-        @Volatile  //writes to this field are immediately made visible to other threads.
+        @Volatile
         private var instance: ArticleDatabase? = null
-        private val LOCK =
-            Any() //use this to synchronize setting the instance to ensure there is only one single instance of our db
-
+        private val LOCK = Any()
         operator fun invoke(context: Context) = instance ?: synchronized(LOCK) {
             instance ?: createDatabase(context).also {
                 instance = it
             }
-
         }
-
         private fun createDatabase(context: Context) = Room.databaseBuilder(
             context.applicationContext, ArticleDatabase::class.java,
             "article_db.db"

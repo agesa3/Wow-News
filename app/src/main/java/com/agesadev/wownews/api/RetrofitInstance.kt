@@ -1,5 +1,6 @@
 package com.agesadev.wownews.api
 
+import com.agesadev.wownews.BuildConfig
 import com.agesadev.wownews.utils.Constants.Companion.BASE_URL
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -10,7 +11,11 @@ class RetrofitInstance {
     companion object {
         private val retrofit by lazy {
             val loggingInterceptor = HttpLoggingInterceptor()
-            loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
+            if (BuildConfig.DEBUG) {
+                loggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
+            } else {
+                loggingInterceptor.level = HttpLoggingInterceptor.Level.NONE
+            }
             val client = OkHttpClient.Builder()
                 .addInterceptor(loggingInterceptor)
                 .build()

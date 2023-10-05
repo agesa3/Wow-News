@@ -40,6 +40,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     app:boxBackgroundMode="none"
+                    android:imeOptions="actionSearch"
+                    android:singleLine="true"
                     android:background="@drawable/search_bg"
                     android:hint="Search News">
 

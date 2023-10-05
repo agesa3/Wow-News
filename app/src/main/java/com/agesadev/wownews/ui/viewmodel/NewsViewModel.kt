@@ -13,6 +13,7 @@ import androidx.lifecycle.viewModelScope
 import com.agesadev.wownews.NewsApplication
 import com.agesadev.wownews.model.Article
 import com.agesadev.wownews.model.NewsResponse
+import com.agesadev.wownews.repository.NewsRepoInterface
 import com.agesadev.wownews.repository.NewsRepository
 import com.agesadev.wownews.utils.Resource
 import kotlinx.coroutines.launch
@@ -21,16 +22,16 @@ import java.io.IOException
 
 class NewsViewModel(
     newsApplication: Application,
-    val newsRepository: NewsRepository
+    val newsRepository: NewsRepoInterface
 ) : AndroidViewModel(newsApplication) {
 
     val breakingNews: MutableLiveData<Resource<NewsResponse>> = MutableLiveData()
     var breakingNewsPage = 1
-    var breakingNewsResponse: NewsResponse? = null
+    private var breakingNewsResponse: NewsResponse? = null
 
     val searchNews: MutableLiveData<Resource<NewsResponse>> = MutableLiveData()
     var searchNewsPage = 1
-    var searchNewsResponse: NewsResponse? = null
+    private var searchNewsResponse: NewsResponse? = null
 
     init {
         getBreakingNews("us")
@@ -42,7 +43,6 @@ class NewsViewModel(
 
     fun searchNews(searchQuery: String) = viewModelScope.launch {
         safeSearchNewsCall(searchQuery)
-
     }
 
 
@@ -79,7 +79,6 @@ class NewsViewModel(
             }
         }
         return Resource.Error(response.message())
-
     }
 
     fun saveArticle(article: Article) = viewModelScope.launch {
@@ -115,6 +114,10 @@ class NewsViewModel(
         try {
             if (hasInternetConnection()) {
                 val response = newsRepository.getBreakingNews(countryCode, breakingNewsPage)
+                if(response.body()?.articles?.isEmpty() == true){
+                    breakingNews.postValue(Resource.Error("No more news"))
+                    return
+                }
                 breakingNews.postValue(handleBreakingNewsResponse(response))
             } else {
                 breakingNews.postValue(Resource.Error("No Internet Connection"))
@@ -154,8 +157,5 @@ class NewsViewModel(
             }
         }
         return false
-
     }
-
-
 }

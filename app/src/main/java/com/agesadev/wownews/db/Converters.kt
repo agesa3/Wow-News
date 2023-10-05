@@ -4,7 +4,6 @@ import androidx.room.TypeConverter
 import com.agesadev.wownews.model.Source
 
 class Converters {
-
     @TypeConverter
     fun fromSource(source: Source): String {
         return source.name
